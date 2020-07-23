@@ -5,6 +5,9 @@
         margin-top:$page_space_from_top_desktop;        
         padding:0 rem($desktop_side_margins, 'desktop');        
     }
+    @media screen and (min-width: $mobile_breakpoint) and (max-width: 1248px){ 
+        padding:0 rem($desktop_side_margins, 'desktop')/3;
+    }    
     @media screen and (min-width: $mobile_breakpoint) and (max-width: 1480px){ 
     }
     @media screen and (min-width: $mobile_breakpoint) and (max-width: 1580px){ 
@@ -16,6 +19,9 @@
     max-width: $desktop_wide_width;
     margin: $page_space_from_top_mobile auto rem(70px, 'desktop') auto;
 //    padding:0 $desktop_side_margins;    
+    .post_data{
+        overflow: hidden;
+    }
     .post_details{
         font-size:rem(9px);
         font-family: $ff-headings;
@@ -50,7 +56,7 @@
         border-radius: 0;
         background-color: transparent;
         color: $light_gray;
-        margin:0 10px;
+        
                  
       }   
       .swiper-pagination-bullet-active {
@@ -58,6 +64,12 @@
         border-color:$accent_color01;
         outline: 0;
       } 
+      .swiper-pagination.in-pagination{
+          margin-top:10px;
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+      }
 }
 
 
@@ -108,7 +120,7 @@
             //height: 380px;        
             @supports (display: grid){
                 display: grid;
-                grid-template-columns: 2fr 2fr 1fr 8%;
+                grid-template-columns: minmax(200px, 480px) 2fr 1fr 8%;
                 //grid-template-rows:1fr 1fr repeat(1fr * 3) 1fr;
                 grid-template-rows: 1fr 1fr 3fr 1fr;
                 width: 90%;
@@ -170,7 +182,12 @@
                 
             }   
         } 
+        .swiper-pagination-bullet {
+          //  margin:0 10px;                     
+        }   
         .swiper-pagination.in-pagination{
+            margin:0;
+            width: 340px;
             @supports (display: grid){
                 position: unset;
                 grid-column: 2 / 3;

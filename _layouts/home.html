@@ -19,7 +19,7 @@
 	                        <div class="post_category"><a href="archive.html#{{post.categories[0] | downcase}}"><img src="{{site.baseurl}}/assets/images/icons/tag_white.svg" alt=""> {{post.categories}}</a></div>
 	                    </div>
 	                    <p class="post_excerpt">
-	                        {{ post.excerpt | strip_html | strip_newlines | truncate: 200 }}
+							{{ post.excerpt | strip_html | strip_newlines | truncate: 150 }}
 						</p>
 						
 						<a class="read_button" href="{{site.baseurl}}{{ post.url }}">Read</a>
